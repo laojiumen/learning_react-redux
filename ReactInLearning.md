@@ -64,7 +64,10 @@ var CommentBox = React.createClass({
   }
 });
 * 5.更新state（例如: 从服务器获取get的方法）,使用componentDidMount()加载数据，当加载成功的时候运用render来更新UI。可以使用轮巡的方式来实时更新，例如:
-1.定义一个function, loadCommentsFromServer: function(){$ajax:...}
-2.在componentDidMount()时调用,this.loadCommentsFromServer;
+(1)定义一个function, loadCommentsFromServer: function(){$ajax:...}
+(2)在componentDidMount()时调用,this.loadCommentsFromServer;
   调用setInterval(this.loadCommentsFromServer, this.props.pollInterval)更新状态.
-3.在React.render时，定义<CommentBox url="...", pollInterval={2000}>,更新
+(3)在React.render时，定义<CommentBox url="...", pollInterval={2000}>,更新
+* 6.ref的用法: 一种React属性，在一个标签如input中添加ref="input"，这样就可以通过this.refs获取这个标签。
+  this.refs 获取React支撑实例
+  支撑实例:通过ref属性返回的实例
